@@ -20,15 +20,15 @@ def group_by_folder_path(pairs):
         tmp = list(g).copy()
         path_set = tmp[0][0]
 
-        files = []
-        for x in tmp:
-            files.append(x[1])
+        files = [x[1] for x in tmp]
 
         group.append((path_set, files))
+
+    print(group)
     return group
 
 # find two folder with most duplicated files. output: (folder1, folder2), [file1, file2, file3, ...]
-def find(duplicated_file_pairs):
+def find(duplicated_file_pairs): # input: [(path1, path2)]
     # group by (folder1, folder2):  [(folder1, folder2), [file1, file2, file3, ...]]
     group = group_by_folder_path(duplicated_file_pairs)  # sort by number of files, descending
 
