@@ -29,9 +29,7 @@ def group_by_file_name(all_files):
         file_name_group.append((file_name, folders))
     return file_name_group
 
-def find_files_with_the_same_name(folder):
-    # list all files.  [(file_name, folder path)]
-    all_files = list_all_files(folder)
+def find_files_with_the_same_name(all_files):
 
     # sorted by file name
     print('sorting all files')
@@ -60,8 +58,12 @@ def find_duplicated_file_pairs(file_group):
 
 #find all duplicated files in given folder. output: [path1, path2)]
 def find(folder):
+
+    # list all files.  [(file_name, folder path)]
+    all_files = list_all_files(folder)
+
     # find files with the same name. output: [(file name, [folder1, folder2, ...])]
-    file_name_group = find_files_with_the_same_name(folder)
+    file_name_group = find_files_with_the_same_name(all_files)
 
     # find duplicated files. output: [path1, path2)]
     out = find_duplicated_file_pairs(file_name_group)

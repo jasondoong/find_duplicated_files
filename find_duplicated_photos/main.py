@@ -1,6 +1,6 @@
 import sys
 
-import ask_user
+from find_duplicated_photos import ask_user, folder_pair, find_duplicated_files
 import find_duplicated_files
 import folder_pair
 

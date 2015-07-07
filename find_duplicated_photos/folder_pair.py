@@ -4,7 +4,7 @@ import itertools
 __author__ = 'jason'
 
 
-def group_by_folder_path(pairs):
+def group_by_folder_pair(pairs):
     # transfer to [(folder1, folder2): file_name] format
     tmp = []
     for x in pairs:
@@ -24,13 +24,12 @@ def group_by_folder_path(pairs):
 
         group.append((path_set, files))
 
-    print(group)
     return group
 
 # find two folder with most duplicated files. output: (folder1, folder2), [file1, file2, file3, ...]
 def most_duplicated(file_pairs): # input: [(path1, path2)]
     # group by (folder1, folder2):  [(folder1, folder2), [file1, file2, file3, ...]]
-    group = group_by_folder_path(file_pairs)  # sort by number of files, descending
+    group = group_by_folder_pair(file_pairs)  # sort by number of files, descending
 
     # sorting by number of files, descending
     print("Sorting by number of files, descending")
