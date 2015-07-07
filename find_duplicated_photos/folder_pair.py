@@ -26,8 +26,9 @@ def group_by_folder_pair(pairs):
 
     return group
 
-# find two folder with most duplicated files. output: (folder1, folder2), [file1, file2, file3, ...]
-def most_duplicated(file_pairs): # input: [(path1, path2)]
+# find two folder with most duplicated files. input: [(path1, path2)]  output: (folder1, folder2), [file1, file2, file3, ...]
+def most_duplicated(file_pairs):
+
     # group by (folder1, folder2):  [(folder1, folder2), [file1, file2, file3, ...]]
     group = group_by_folder_pair(file_pairs)  # sort by number of files, descending
 
