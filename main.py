@@ -1,8 +1,8 @@
 import sys
 
 import ask_user
-import find_duplicated_file_pairs
-import find_two_folders_which_contains_most_duplicated_files
+import find_duplicated_files
+import folder_pair
 
 __author__ = 'jason'
 
@@ -13,7 +13,7 @@ else:
     sys.exit("Usage: python3 main.py [folder path]")
 
 #find all duplicated files in given folder. output: [path1, path2)]
-pairs = find_duplicated_file_pairs.find(folder)
+pairs = find_duplicated_files.find(folder)
 
 #exit if no duplicated files
 if len(pairs)==0:
@@ -21,7 +21,7 @@ if len(pairs)==0:
     sys.exit(0)
 
 # find two folder with most duplicated files. output: (folder1, folder2), [file1, file2, file3, ...]
-x = find_two_folders_which_contains_most_duplicated_files.find(pairs)
+x = folder_pair.most_duplicated(pairs)
 
 # ask user which to delete?
 ask_user.ask(x)
